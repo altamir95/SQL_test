@@ -1,38 +1,40 @@
-USE usersdb;
+CREATE DATABASE fooddb;
+
+GO
+
+USE fooddb;
 CREATE TABLE Foods(
     Id INT IDENTITY ,
     FoodName NVARCHAR(50) NOT NULL,
-    CONSTRAINT PK_Food_Id PRIMARY KEY(Id),
-    CONSTRAINT UQ_Food_FoodName UNIQUE (FoodName)
+    CONSTRAINT PK_Food_Id PRIMARY KEY(Id)
 );
 INSERT INTO Foods VALUES
-('Колбаса'),
-('Батон'),
-('Булка'),
-('Шоколад'),
-('Банан'),
-('Молоко'),
-('Апельсин'),
-('Яйцо'),
-('Хлопья'),
-('Носки'),
-('Мыло'),
-('Рис'),
-('Яблоко');
+(N'Колбаса'),
+(N'Батон'),
+(N'Булка'),
+(N'Шоколад'),
+(N'Банан'),
+(N'Молоко'),
+(N'Апельсин'),
+(N'Яйцо'),
+(N'Хлопья'),
+(N'Носки'),
+(N'Мыло'),
+(N'Рис'),
+(N'Яблоко');
 CREATE TABLE Categories(
     Id INT IDENTITY,
     CategorieName NVARCHAR(50) NOT NULL,
-    CONSTRAINT PK_Categorie_Id PRIMARY KEY(Id),
-    CONSTRAINT UQ_Categorie_FoodName UNIQUE (CategorieName)
+    CONSTRAINT PK_Categorie_Id PRIMARY KEY(Id)
 );
 INSERT INTO Categories VALUES
-('Фрукты'),
-('Сладкое'),
-('Выпечка'),
-('Молочка'),
-('Халал'),
-('Эко'),
-('Импрот');
+(N'Фрукты'),
+(N'Сладкое'),
+(N'Выпечка'),
+(N'Молочка'),
+(N'Халал'),
+(N'Эко'),
+(N'Импрот');
 CREATE TABLE FoodCategories(
     FoodId INT,
     CategorieId INT,
